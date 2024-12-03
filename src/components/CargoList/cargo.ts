@@ -1,5 +1,5 @@
 export type CargoType = {
-    id: Number,
+    id: number,
     name: string,
     status: CargoStatus,
     origin: string,
