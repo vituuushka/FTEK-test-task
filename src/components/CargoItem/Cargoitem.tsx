@@ -5,14 +5,15 @@ type CargoItemPropsType = {
 }
 
 const CargoItem = (props:CargoItemPropsType ) => {
+
   const cargo = props.cargo
     return (
         <tr>
-      <td>{cargo.id}</td>
+      <td>CARG{String(cargo.id)}</td>
       <td>{cargo.name}</td>
       <td>{cargo.status}</td>
       <td>{cargo.origin} - {cargo.destination}</td>
-      <td>{cargo.departureDate}</td>
+      <td>{cargo.departureDate}</td> 
     </tr>
     )
 }

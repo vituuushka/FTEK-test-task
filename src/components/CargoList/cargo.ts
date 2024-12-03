@@ -1,25 +1,32 @@
 export type CargoType = {
-    id: string,
+    id: Number,
     name: string,
-    status: string,
+    status: CargoStatus,
     origin: string,
     destination: string,
-    departureDate: string
+    departureDate: string 
 }
+
+export enum CargoStatus {
+  sendAwaiting = "Ожидает отправки",
+  inProgress = "В пути",
+  done = "Доставлен"
+}
+
 
 export const initCargoes: CargoType[] = [
     {
-        id: "CARGO001",
+        id: 1,
         name: "Строительные материалы",
-        status: "В пути",
+        status: CargoStatus.inProgress,
         origin: "Москва",
         destination: "Казань",
         departureDate: "2024-11-24"
       },
       {
-        id: "CARGO002",
+        id: 2,
         name: "Хрупкий груз",
-        status: "Ожидает отправки",
+        status: CargoStatus.sendAwaiting,
         origin: "Санкт-Петербург",
         destination: "Екатеринбург",
         departureDate: "2024-11-26"
