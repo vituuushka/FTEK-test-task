@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+# Тестовое задание для компании FTEK
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ссылка на деплой https://vituuushka.github.io/FTEK-test-task/
 
-## Available Scripts
 
-In the project directory, you can run:
+### задание:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Описание задания:
+Создать интерфейс для отслеживания грузов транспортной компании. Интерфейс должен позволять:
+Просматривать список грузов с текущим статусом.
+Обновлять статус груза.
+Добавлять новый груз для отслеживания.
+Требования к реализации
+Основной функционал:
+Просмотр списка грузов:
+Реализовать таблицу, где отображаются:
+Номер груза (генерируется автоматически).
+Название груза.
+Статус груза (например, "Ожидает отправки", "В пути", "Доставлен").
+Пункт отправления и пункт назначения.
+Дата отправления.
+Возможность изменить статус груза (через выпадающий список прямо в таблице).
+Добавление нового груза:
+Реализовать форму с полями:
+Название груза.
+Пункт отправления и пункт назначения (выпадающий список с заранее заданными городами).
+Дата отправления.
+Начальный статус груза (по умолчанию "Ожидает отправки").
+После отправки формы груз добавляется в таблицу.
+Изменение статуса груза:
+В таблице для каждого груза реализовать выпадающий список со статусами. Выбор нового статуса обновляет данные в таблице.
+Данные для работы:
+Использовать массив объектов для хранения данных о грузах, например:
+const cargoList = [
+  {
+    id: "CARGO001",
+    name: "Строительные материалы",
+    status: "В пути",
+    origin: "Москва",
+    destination: "Казань",
+    departureDate: "2024-11-24"
+  },
+  {
+    id: "CARGO002",
+    name: "Хрупкий груз",
+    status: "Ожидает отправки",
+    origin: "Санкт-Петербург",
+    destination: "Екатеринбург",
+    departureDate: "2024-11-26"
+  }
+];
+Данные нового груза добавляются в массив и отображаются в интерфейсе.
+Дизайн:
+Использовать Bootstrap для адаптивности и удобства работы.
+Добавить цветовую индикацию статусов:
+"Ожидает отправки" — желтый.
+"В пути" — синий.
+"Доставлен" — зеленый.
+Дополнительно:
+Реализовать фильтр по статусу груза (например, показывать только грузы со статусом "В пути").
+Реализовать проверку введенных данных при добавлении груза (например, поля не должны быть пустыми).
+Обработка ошибок:
+При попытке изменить статус на "Доставлен", если дата отправления находится в будущем, показывать сообщение об ошибке.
+Если пользователь не заполнил все поля формы добавления груза, выводить предупреждение
