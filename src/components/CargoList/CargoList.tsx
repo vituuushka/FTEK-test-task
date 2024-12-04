@@ -13,43 +13,36 @@ export type CargoDTOType = {
 };
 const CargoList = () => {
   const [isAddCargoFormShowed, setIsAddCargoFormShowed] =
-    useState<Boolean>(false);
+    useState<Boolean>(true);
 
   const [cargoes, setCargo] = useState<CargoType[]>(initCargoes);
 
   const addNewCargo = (cargoDTO: CargoDTOType) => {
-    const cargoId = cargoes.length+1;
+    const cargoId = cargoes.length + 1;
     const newCargo = { id: cargoId, ...cargoDTO };
     const newCargoes = [...cargoes, newCargo];
     setCargo(newCargoes);
     setIsAddCargoFormShowed(false);
   };
-  const changeCargo = (cargoId:number, newStatus: CargoStatus) => {
-    debugger
-    const changedCargoes = cargoes.map(cargo => {
-      if (cargo.id===cargoId) {
+  const changeCargo = (cargoId: number, newStatus: CargoStatus) => {
+    debugger;
+    const changedCargoes = cargoes.map((cargo) => {
+      if (cargo.id === cargoId) {
         return {
-          ...cargo, status: newStatus
-        }
+          ...cargo,
+          status: newStatus,
+        };
       }
 
-      return cargo
-    })
-    debugger
-    setCargo(changedCargoes)
-  }
+      return cargo;
+    });
+    debugger;
+    setCargo(changedCargoes);
+  };
   return (
     <div>
-      {isAddCargoFormShowed && (
-        <CargoForm addNewCargo={addNewCargo} cargoes={cargoes} />
-      )}
-      <button
-        onClick={() => {
-          setIsAddCargoFormShowed(true);
-        }}
-      >
-        Добавить новый груз
-      </button>
+      <CargoForm addNewCargo={addNewCargo} cargoes={cargoes} />
+
       <table className="table">
         <CargoHeader />
         <tbody>

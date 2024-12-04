@@ -34,7 +34,7 @@ const EditableCargoStatus = (props: {
       </button>
       <ul className="dropdown-menu">
         {allOtherStatuses.map((status) => (
-          <li onClick={()=> props.changeStatus(status)} >
+          <li key={allOtherStatuses.indexOf(status)} onClick={()=> props.changeStatus(status)} >
             <a className="dropdown-item" href="#">
               {status}
             </a>
