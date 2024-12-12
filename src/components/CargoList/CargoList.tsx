@@ -25,7 +25,6 @@ const CargoList = () => {
     setIsAddCargoFormShowed(false);
   };
   const changeCargo = (cargoId: number, newStatus: CargoStatus) => {
-    debugger;
     const changedCargoes = cargoes.map((cargo) => {
       if (cargo.id === cargoId) {
         return {
@@ -36,7 +35,6 @@ const CargoList = () => {
 
       return cargo;
     });
-    debugger;
     setCargo(changedCargoes);
   };
   return (
